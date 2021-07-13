@@ -1,0 +1,13 @@
+DOTFILES_PATH="/Users/chrise/code/dotfiles/"
+
+source "${DOTFILES_PATH}bash/zsh_compat.sh"
+source "${DOTFILES_PATH}bash/exports.sh"
+source "${DOTFILES_PATH}bash/functions.sh"
+source "${DOTFILES_PATH}bash/bindings.sh"
+source "${DOTFILES_PATH}bash/completion.sh"
+source "${DOTFILES_PATH}bash/alias.sh"
+
+eval "$(starship init zsh)"
+
+eval "$(sheldon source)"
+
