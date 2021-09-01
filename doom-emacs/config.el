@@ -1,16 +1,25 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; User
 (setq user-full-name "Chris Etheridge"
       user-mail-address "chrise@cognician.com")
 
+;; Visual
 (setq doom-font (font-spec :family "Fira Code" :size 12))
-
+(setq display-line-numbers-type t)
 (setq doom-theme 'doom-flatwhite)
 
+;; Modeline
+(display-time-mode 1)
+(display-battery-mode 1)
+(setq doom-modeline-major-mode-icon t)
+(setq doom-modeline-enable-word-count t)
+(setq doom-modeline-modal-icon t)
+
+;; Org
 (setq org-directory "~/org/")
 
-(setq display-line-numbers-type t)
-
+;; Company
 (setq company-idle-delay 0.3)
 (setq company-show-numbers t)
 (setq company-tooltip-align-annotations t)
@@ -72,14 +81,6 @@
    cider-repl-use-clojure-font-lock t
    cider-font-lock-dynamically t))
 
-;; Modeline
-(display-time-mode 1)
-(display-battery-mode 1)
-
-(setq doom-modeline-major-mode-icon t)
-(setq doom-modeline-enable-word-count t)
-(setq doom-modeline-modal-icon t)
-
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
 (global-set-key (kbd "s-(") 'paredit-wrap-sexp)
@@ -90,3 +91,24 @@
 
 (after! counsel
   (setq counsel-rg-base-command "rg -M 240 -C 2 --with-filename --no-heading --line-number %s || true"))
+
+;; Custom load/switch theme functions
+;; Prevents old theme customizations clashing with new theme
+;; Also gets around unsafe theme code warning
+(defun sw/load-doom-theme (theme)
+  "Disable active themes and load a Doom theme."
+  (interactive (list (intern (completing-read "Theme: "
+                                              (->> (custom-available-themes)
+                                                   (-map #'symbol-name)
+                                                   (--select (string-prefix-p "doom-" it)))))))
+  (ap/switch-theme theme)
+
+  (set-face-foreground 'org-indent (face-background 'default)))
+
+(defun sw/switch-theme (theme)
+  "Disable active themes and load THEME."
+  (interactive (list (intern (completing-read "Theme: "
+                                              (->> (custom-available-themes)
+                                                   (-map #'symbol-name))))))
+  (mapc #'disable-theme custom-enabled-themes)
+  (load-theme theme 'no-confirm))
