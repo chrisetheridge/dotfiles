@@ -7,7 +7,7 @@
 ;; Visual
 (setq doom-font (font-spec :family "Fira Code" :size 12))
 (setq display-line-numbers-type t)
-(setq doom-theme 'doom-flatwhite)
+(setq doom-theme 'doom-nord)
 
 ;; Modeline
 (display-time-mode 1)
@@ -71,7 +71,7 @@
     ;; Tufte (profiling)
     (tufte/p 'defun)
     (tufte/profile 'defun)))
-
+ 
 ;; CIDER (clojure)
 (after! cider
   (setq
