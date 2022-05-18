@@ -7,7 +7,7 @@
 ;; Visual
 (setq doom-font (font-spec :family "Fira Code" :size 12))
 (setq display-line-numbers-type t)
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-flatwhite)
 
 ;; Modeline
 (display-time-mode 1)
@@ -112,3 +112,8 @@
                                                    (-map #'symbol-name))))))
   (mapc #'disable-theme custom-enabled-themes)
   (load-theme theme 'no-confirm))
+
+(define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
+
+(set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
+                                                       ".cljfmt.edn"))))
