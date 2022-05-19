@@ -117,3 +117,5 @@
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
                                                        ".cljfmt.edn"))))
+
+(setq cider-redirect-server-output-to-repl nil)
