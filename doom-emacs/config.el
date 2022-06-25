@@ -5,7 +5,7 @@
       user-mail-address "chrise@cognician.com")
 
 ;; Visual
-(setq doom-font (font-spec :family "Fira Code" :size 12))
+(setq doom-font (font-spec :family "Roboto Mono" :size 12))
 (setq display-line-numbers-type t)
 (setq doom-theme 'doom-nord)
 
@@ -139,8 +139,8 @@
 (require 'nano-colors)
 ;; (require 'nano-minibuffer)
 
-(setq nano-font-family-monospaced "Fira Code")
-(setq nano-font-family-proportional "Fira Code")
+(setq nano-font-family-monospaced "Roboto Mono")
+(setq nano-font-family-proportional "Roboto Mono")
 (setq nano-font-size 12)
 
 (defun nano-theme-overrides ()
@@ -351,3 +351,7 @@
     ad-do-it))
 
 (ad-activate 'term-sentinel)
+
+(setq lsp-file-watch-threshold 10000
+      lsp-diagnostics-provider :none
+      lsp-enable-indentation nil)
