@@ -79,7 +79,12 @@
    cider-show-error-buffer nil
    cider-font-lock-reader-conditionals nil
    cider-repl-use-clojure-font-lock t
-   cider-font-lock-dynamically t))
+   cider-font-lock-dynamically t
+   cider-save-file-on-load t
+   nrepl-log-messages t
+   cider-redirect-server-output-to-repl nil
+   cider-print-fn nil))
+
 
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
@@ -115,8 +120,6 @@
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
                                                        ".cljfmt.edn"))))
-
-(setq cider-redirect-server-output-to-repl t)
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
@@ -353,5 +356,14 @@
 (ad-activate 'term-sentinel)
 
 (setq lsp-file-watch-threshold 10000
-      lsp-diagnostics-provider :none
-      lsp-enable-indentation nil)
+      lsp-enable-indentation nil
+      lsp-ui-doc-show-with-cursor t
+      lsp-ui-doc-enhanced-markdown t
+      lsp-ui-doc-include-signature t
+      lsp-ui-doc-max-height 20)
+
+(setq display-line-numbers-type 'relative)
+
+(setq lsp-rust-server 'rust-analyzer)
+
+(setq lsp-rust-analyzer-server-display-inlay-hints t)

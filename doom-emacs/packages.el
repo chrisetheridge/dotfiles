@@ -55,8 +55,6 @@
 
 (package! cider)
 
-(package! catppuccin-theme)
-
 (package! nano-theme)
 
 (package! nano-emacs
