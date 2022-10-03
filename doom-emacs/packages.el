@@ -55,11 +55,3 @@
 
 (package! cider)
 
-(package! nano-theme)
-
-(package! nano-emacs
-  :recipe (:host github :repo "rougier/nano-emacs"))
-
-(package! smex)
-
-(package! mini-frame)
