@@ -55,3 +55,4 @@
 
 (package! cider)
 
+(package! map :pin "bb50dba")
