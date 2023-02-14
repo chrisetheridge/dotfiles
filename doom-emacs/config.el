@@ -11,10 +11,9 @@
 
 ;; Modeline
 (display-time-mode 1)
-(display-battery-mode 1)
-(setq doom-modeline-major-mode-icon t)
-(setq doom-modeline-enable-word-count t)
-(setq doom-modeline-modal-icon t)
+;; (setq doom-modeline-major-mode-icon t)
+;; (setq doom-modeline-enable-word-count t)
+;; (setq doom-modeline-modal-icon t)
 
 ;; Org
 (setq org-directory "~/org/")
@@ -83,8 +82,16 @@
    cider-save-file-on-load t
    nrepl-log-messages nil
    cider-redirect-server-output-to-repl t
-  ))
+   cider-print-fn 'pprint))
 
+(defun cog/cognician-clerk ()
+  (interactive)
+  (cider-interactive-eval (concat
+                           "(nextjournal.clerk/show! (java.io.StringReader. "
+                           (format "%S" (buffer-substring-no-properties (point-min) (point-max)))
+                           "))")))
+
+(buffer-string)
 
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
@@ -92,7 +99,15 @@
 (global-set-key (kbd "s-}") 'paredit-wrap-curly)
 (global-set-key (kbd "s-[" ) 'paredit-wrap-square)
 (global-set-key (kbd "s-r") 'sp-splice-sexp-killing-around)
+
+(global-set-key (kbd "M-s-<right>") 'paredit-forward-slurp-sexp)
+(global-set-key (kbd "M-s-<left>") 'paredit-backward-slurp-sexp)
+
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-x p")
+                 (lambda ()
+                   (interactive)
+                   (cider-eval-print-last-sexp 't)))
 
 (after! counsel
   (setq counsel-rg-base-command "rg -M 240 -C 2 --with-filename --no-heading --line-number %s || true"))
