@@ -53,7 +53,7 @@
 
 (package! grep+)
 
-(package! cider)
+(package! cider :pin "b33e18260aa3d6c79451a4c2bbace072c8256869")
 
 (package! map :pin "bb50dba")
 
