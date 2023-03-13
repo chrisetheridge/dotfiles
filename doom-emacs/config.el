@@ -91,8 +91,6 @@
                            (format "%S" (buffer-substring-no-properties (point-min) (point-max)))
                            "))")))
 
-(buffer-string)
-
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
 (global-set-key (kbd "s-(") 'paredit-wrap-sexp)

@@ -58,3 +58,5 @@
 (package! map :pin "bb50dba")
 
 (package! clj-decompiler)
+
+(package! tree-sitter-langs)
