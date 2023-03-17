@@ -84,6 +84,9 @@
    cider-redirect-server-output-to-repl t
    cider-print-fn 'pprint))
 
+(after! lsp-mode
+  (setq lsp-idle-delay 0))
+
 (defun cog/cognician-clerk ()
   (interactive)
   (cider-interactive-eval (concat
