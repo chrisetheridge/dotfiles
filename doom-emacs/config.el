@@ -85,7 +85,7 @@
    cider-print-fn 'pprint))
 
 (after! lsp-mode
-  (setq lsp-idle-delay 0))
+  (setq lsp-idle-delay 0.1))
 
 (defun cog/cognician-clerk ()
   (interactive)
