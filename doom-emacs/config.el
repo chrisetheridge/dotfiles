@@ -82,10 +82,17 @@
    cider-save-file-on-load t
    nrepl-log-messages nil
    cider-redirect-server-output-to-repl t
-   cider-print-fn 'pprint))
+   cider-print-fn 'pprint)
+  (require 'flycheck-clj-kondo))
 
 (after! lsp-mode
-  (setq lsp-idle-delay 0.1))
+  (setq lsp-semantic-tokens-enable nil
+        lsp-idle-delay 0.2
+        lsp-diagnostics-provider :none))
+
+(after! flycheck-mode
+  (setq flycheck-display-errors-delay 0.1
+        flycheck-idle-change-delay 0.1))
 
 (defun cog/cognician-clerk ()
   (interactive)
