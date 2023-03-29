@@ -5,7 +5,7 @@
       user-mail-address "chrise@cognician.com")
 
 ;; Visual
-(setq doom-font (font-spec :family "Roboto Mono" :size 12))
+(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 12))
 (setq display-line-numbers-type t)
 (setq doom-theme 'doom-nord)
 
@@ -22,6 +22,8 @@
 (setq company-idle-delay 0.3)
 (setq company-show-numbers t)
 (setq company-tooltip-align-annotations t)
+
+(add-to-list 'custom-theme-load-path "/Users/chrise/dotfiles/doom-emacs/themes/")
 
 ;; windmove
 (when (fboundp 'windmove-default-keybindings)
@@ -88,7 +90,8 @@
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
         lsp-idle-delay 0.2
-        lsp-diagnostics-provider :none))
+        lsp-diagnostics-provider :none
+        lsp-headerline-breadcrumb-enable nil))
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 0.1

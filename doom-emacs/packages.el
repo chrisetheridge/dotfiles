@@ -60,3 +60,5 @@
 (package! clj-decompiler)
 
 (package! tree-sitter-langs)
+
+(package! autothemer)
