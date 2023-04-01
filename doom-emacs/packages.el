@@ -62,3 +62,5 @@
 (package! tree-sitter-langs)
 
 (package! autothemer)
+
+(package! flycheck-clj-kondo)
