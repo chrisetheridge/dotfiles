@@ -5,7 +5,7 @@
       user-mail-address "chrise@cognician.com")
 
 ;; Visual
-(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 12))
+(setq doom-font (font-spec :family "Fira Code" :size 12))
 (setq display-line-numbers-type t)
 (setq doom-theme 'doom-nord)
 
@@ -61,17 +61,7 @@
 ;; Clojure
 (after! clojure-mode
   (setq clojure-align-forms-automatically t)
-  (define-clojure-indent
-    ;; Compojure
-    (GET 'defun)
-    (POST 'defun)
-    (context 'defun)
-    (cj/GET 'defun)
-    (cj/POST 'defun )
-    (cj/context 'defun)
-    ;; Tufte (profiling)
-    (tufte/p 'defun)
-    (tufte/profile 'defun)))
+  (paredit-mode))
  
 ;; CIDER (clojure)
 (after! cider
@@ -90,7 +80,6 @@
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
         lsp-idle-delay 0.2
-        lsp-diagnostics-provider :none
         lsp-headerline-breadcrumb-enable nil))
 
 (after! flycheck-mode
