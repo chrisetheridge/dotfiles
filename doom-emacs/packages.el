@@ -64,3 +64,5 @@
 (package! autothemer)
 
 (package! flycheck-clj-kondo)
+
+(package! theme-magic)

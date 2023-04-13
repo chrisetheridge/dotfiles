@@ -5,7 +5,8 @@
       user-mail-address "chrise@cognician.com")
 
 ;; Visual
-(setq doom-font (font-spec :family "Fira Code" :size 12))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
+
 (setq display-line-numbers-type t)
 (setq doom-theme 'doom-nord)
 
@@ -58,12 +59,20 @@
                     "resources/public/js/compiled"
                     ".shadow-cljs/"))))
 
+;; Theme magic
+
+(require 'theme-magic)
+
+(theme-magic-export-theme-mode)
+
 ;; Clojure
+
 (after! clojure-mode
   (setq clojure-align-forms-automatically t)
   (paredit-mode))
  
 ;; CIDER (clojure)
+
 (after! cider
   (setq
    cider-repl-pop-to-buffer-on-connect nil
@@ -80,7 +89,8 @@
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
         lsp-idle-delay 0.2
-        lsp-headerline-breadcrumb-enable nil))
+        lsp-headerline-breadcrumb-enable nil
+        lsp-diagnostics-provider :none))
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 0.1
