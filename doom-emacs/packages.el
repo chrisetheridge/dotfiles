@@ -66,3 +66,5 @@
 (package! flycheck-clj-kondo)
 
 (package! theme-magic)
+
+(package! lsp-treemacs)

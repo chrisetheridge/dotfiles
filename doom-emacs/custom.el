@@ -17,7 +17,7 @@
      ("XXX" font-lock-constant-face bold)
      ("todo" warning bold)))
  '(package-selected-packages
-   '(flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
+   '(lsp-treemacs flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web"))))
