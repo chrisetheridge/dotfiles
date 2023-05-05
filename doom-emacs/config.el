@@ -65,11 +65,18 @@
 
 (theme-magic-export-theme-mode)
 
+;; clojure-mode
+;; lsp
+;; cider
+;; flycheck + flycheck-clj-kondo
+
 ;; Clojure
 
 (after! clojure-mode
   (setq clojure-align-forms-automatically t)
-  (paredit-mode))
+  (paredit-mode)
+  (auto-save-visited-mode))
+
  
 ;; CIDER (clojure)
 
@@ -113,7 +120,10 @@
 (global-set-key (kbd "M-s-<right>") 'paredit-forward-slurp-sexp)
 (global-set-key (kbd "M-s-<left>") 'paredit-backward-slurp-sexp)
 
+(global-set-key (kbd "C-M-c") 'sp-copy-sexp)
+
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+
 (global-set-key (kbd "C-x p")
                  (lambda ()
                    (interactive)
@@ -149,7 +159,7 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (setq lsp-file-watch-threshold 10000
-      lsp-enable-indentation nil
+      lsp-enable-indentation t
       lsp-ui-doc-show-with-cursor t
       lsp-ui-doc-enhanced-markdown t
       lsp-ui-doc-include-signature t
