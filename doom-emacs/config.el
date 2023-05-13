@@ -74,10 +74,8 @@
 
 (after! clojure-mode
   (setq clojure-align-forms-automatically t)
-  (paredit-mode)
-  (auto-save-visited-mode))
+  (paredit-mode))
 
- 
 ;; CIDER (clojure)
 
 (after! cider
@@ -96,8 +94,7 @@
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
         lsp-idle-delay 0.2
-        lsp-headerline-breadcrumb-enable nil
-        lsp-diagnostics-provider :none))
+        lsp-headerline-breadcrumb-enable nil))
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 0.1
@@ -164,6 +161,8 @@
       lsp-ui-doc-enhanced-markdown t
       lsp-ui-doc-include-signature t
       lsp-ui-doc-max-height 20)
+
+(setq +format-with-lsp nil)
 
 (setq display-line-numbers-type 'relative)
 
