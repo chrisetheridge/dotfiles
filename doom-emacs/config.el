@@ -85,8 +85,9 @@
    cider-font-lock-reader-conditionals nil
    cider-repl-use-clojure-font-lock t
    cider-font-lock-dynamically t
-   cider-save-file-on-load t
+   cider-save-file-on-load nil
    nrepl-log-messages nil
+   cider-show-error-buffer t
    cider-redirect-server-output-to-repl t
    cider-print-fn 'pprint)
   (require 'flycheck-clj-kondo))
