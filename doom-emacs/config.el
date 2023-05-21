@@ -88,13 +88,12 @@
    cider-save-file-on-load nil
    nrepl-log-messages nil
    cider-show-error-buffer t
-   cider-redirect-server-output-to-repl t
-   cider-print-fn 'pprint)
+   cider-redirect-server-output-to-repl t)
   (require 'flycheck-clj-kondo))
 
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
-        lsp-idle-delay 0.2
+        lsp-idle-delay 0.1
         lsp-headerline-breadcrumb-enable nil))
 
 (after! flycheck-mode
