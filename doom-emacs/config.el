@@ -162,10 +162,20 @@
       lsp-ui-doc-include-signature t
       lsp-ui-doc-max-height 20)
 
-(setq +format-with-lsp nil)
+(setq +format-with-lsp t)
 
 (setq display-line-numbers-type 'relative)
 
 (setq lsp-rust-server 'rust-analyzer)
 
 (setq lsp-rust-analyzer-server-display-inlay-hints t)
+
+;; Copilot
+
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
