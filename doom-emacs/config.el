@@ -118,6 +118,7 @@
 (global-set-key (kbd "M-s-<left>") 'paredit-backward-slurp-sexp)
 
 (global-set-key (kbd "C-M-c") 'sp-copy-sexp)
+(global-set-key (kbd "C-M-SPC") 'sp-mark-sexp)
 
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
