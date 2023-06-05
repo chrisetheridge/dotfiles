@@ -98,7 +98,14 @@
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 0.1
-        flycheck-idle-change-delay 0.1))
+        flycheck-idle-change-delay 0.1
+        lsp-file-watch-threshold 10000
+        lsp-enable-indentation t
+        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-enhanced-markdown t
+        lsp-ui-doc-include-signature t
+        lsp-ui-doc-max-height 20
+        +format-with-lsp t))
 
 (defun cog/cognician-clerk ()
   (interactive)
@@ -130,25 +137,6 @@
 (after! counsel
   (setq counsel-rg-base-command "rg -M 240 -C 2 --with-filename --no-heading --line-number %s || true"))
 
-;; Custom load/switch theme functions
-;; Prevents old theme customizations clashing with new theme
-;; Also gets around unsafe theme code warning
-(defun sw/load-doom-theme (theme)
-  "Disable active themes and load a Doom theme."
-  (interactive (list (intern (completing-read "Theme: "
-                                              (->> (custom-available-themes)
-                                                   (-map #'symbol-name)
-                                                   (--select (string-prefix-p "doom-" it)))))))
-  (sw/switch-theme theme))
-
-(defun sw/switch-theme (theme)
-  "Disable active themes and load THEME."
-  (interactive (list (intern (completing-read "Theme: "
-                                              (->> (custom-available-themes)
-                                                   (-map #'symbol-name))))))
-  (mapc #'disable-theme custom-enabled-themes)
-  (load-theme theme 'no-confirm))
-
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
@@ -156,16 +144,7 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq lsp-file-watch-threshold 10000
-      lsp-enable-indentation t
-      lsp-ui-doc-show-with-cursor t
-      lsp-ui-doc-enhanced-markdown t
-      lsp-ui-doc-include-signature t
-      lsp-ui-doc-max-height 20)
-
-(setq +format-with-lsp t)
-
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 't)
 
 (setq lsp-rust-server 'rust-analyzer)
 
