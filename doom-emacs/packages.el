@@ -65,9 +65,5 @@
 
 (package! flycheck-clj-kondo)
 
-(package! theme-magic)
-
-(package! lsp-treemacs)
-
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))

@@ -59,12 +59,6 @@
                     "resources/public/js/compiled"
                     ".shadow-cljs/"))))
 
-;; Theme magic
-
-(require 'theme-magic)
-
-(theme-magic-export-theme-mode)
-
 ;; clojure-mode
 ;; lsp
 ;; cider
