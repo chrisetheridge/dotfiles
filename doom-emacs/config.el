@@ -99,7 +99,7 @@
         lsp-ui-doc-enhanced-markdown t
         lsp-ui-doc-include-signature t
         lsp-ui-doc-max-height 20
-        +format-with-lsp t))
+        +format-with-lsp nil))
 
 (defun cog/cognician-clerk ()
   (interactive)
