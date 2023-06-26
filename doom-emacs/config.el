@@ -88,7 +88,8 @@
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
         lsp-idle-delay 0.1
-        lsp-headerline-breadcrumb-enable nil))
+        lsp-headerline-breadcrumb-enable nil
+        lsp-ui-sideline-enable t))
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 0.1
@@ -98,7 +99,7 @@
         lsp-ui-doc-show-with-cursor t
         lsp-ui-doc-enhanced-markdown t
         lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-height 20
+        lsp-ui-doc-max-height 40
         +format-with-lsp nil))
 
 (defun cog/cognician-clerk ()
