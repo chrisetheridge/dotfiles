@@ -99,15 +99,8 @@
         lsp-ui-doc-show-with-cursor t
         lsp-ui-doc-enhanced-markdown t
         lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-height 40
+        lsp-ui-doc-max-height 20
         +format-with-lsp nil))
-
-(defun cog/cognician-clerk ()
-  (interactive)
-  (cider-interactive-eval (concat
-                           "(nextjournal.clerk/show! (java.io.StringReader. "
-                           (format "%S" (buffer-substring-no-properties (point-min) (point-max)))
-                           "))")))
 
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
