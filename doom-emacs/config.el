@@ -117,11 +117,6 @@
 
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
-(global-set-key (kbd "C-x p")
-                 (lambda ()
-                   (interactive)
-                   (cider-eval-print-last-sexp 't)))
-
 (after! counsel
   (setq counsel-rg-base-command "rg -M 240 -C 2 --with-filename --no-heading --line-number %s || true"))
 
