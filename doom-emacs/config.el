@@ -118,7 +118,7 @@
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 (after! counsel
-  (setq counsel-rg-base-command "rg -M 240 -C 2 --with-filename --no-heading --line-number %s || true"))
+  (setq counsel-rg-base-command "rg -M 50 -C 2 --with-filename --no-heading --line-number %s || true"))
 
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
