@@ -89,18 +89,18 @@
   (setq lsp-semantic-tokens-enable nil
         lsp-idle-delay 0.1
         lsp-headerline-breadcrumb-enable nil
-        lsp-ui-sideline-enable t))
-
-(after! flycheck-mode
-  (setq flycheck-display-errors-delay 0.1
-        flycheck-idle-change-delay 0.1
-        lsp-file-watch-threshold 10000
+        lsp-ui-sideline-enable t
+        lsp-file-watch-threshold 5000
         lsp-enable-indentation t
         lsp-ui-doc-show-with-cursor t
         lsp-ui-doc-enhanced-markdown t
         lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-height 20
+        lsp-ui-doc-max-height 25
         +format-with-lsp nil))
+
+(after! flycheck-mode
+  (setq flycheck-display-errors-delay 0.1
+        flycheck-idle-change-delay 0.1))
 
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
