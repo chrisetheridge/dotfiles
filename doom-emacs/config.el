@@ -7,14 +7,8 @@
 ;; Visual
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
 
-(setq display-line-numbers-type t)
 (setq doom-theme 'doom-nord)
 
-;; Modeline
-(display-time-mode 1)
-;; (setq doom-modeline-major-mode-icon t)
-;; (setq doom-modeline-enable-word-count t)
-;; (setq doom-modeline-modal-icon t)
 
 ;; Org
 (setq org-directory "~/org/")
@@ -119,8 +113,6 @@
 
 (after! counsel
   (setq counsel-rg-base-command "rg -M 300 -C 2 --with-filename --no-heading --line-number %s || true"))
-
-(define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
                                                        ".cljfmt.edn"))))
