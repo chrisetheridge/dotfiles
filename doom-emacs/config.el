@@ -9,16 +9,11 @@
 
 (setq doom-theme 'doom-nord)
 
-
-;; Org
-(setq org-directory "~/org/")
-
 ;; Company
-(setq company-idle-delay 0.3)
-(setq company-show-numbers t)
-(setq company-tooltip-align-annotations t)
-
-(add-to-list 'custom-theme-load-path "/Users/chrise/dotfiles/doom-emacs/themes/")
+(after! company-mode
+  (setq company-idle-delay 0.3)
+  (setq company-show-numbers t)
+  (setq company-tooltip-align-annotations t))
 
 ;; windmove
 (when (fboundp 'windmove-default-keybindings)
@@ -30,7 +25,6 @@
   (setq projectile-globally-ignored-files
         (cl-union projectile-globally-ignored-files
                   '(".DS_Store"
-                    ".lein-repl-history"
                     "*.gz"
                     "*.pyc"
                     "*.png"
@@ -50,7 +44,7 @@
                     ".svn"
                     "out"
                     "node_modules"
-                    "resources/public/js/compiled"
+                    "resources/public/cljs"
                     ".shadow-cljs/"))))
 
 ;; clojure-mode
@@ -121,9 +115,9 @@
 
 (setq display-line-numbers-type 't)
 
-(setq lsp-rust-server 'rust-analyzer)
-
-(setq lsp-rust-analyzer-server-display-inlay-hints t)
+(after! rust-mode-hook
+  (setq lsp-rust-server 'rust-analyzer)
+  (setq lsp-rust-analyzer-server-display-inlay-hints t))
 
 ;; Copilot
 
