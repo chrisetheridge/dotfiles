@@ -87,7 +87,7 @@
         +format-with-lsp nil))
 
 (after! flycheck-mode
-  (setq flycheck-display-errors-delay 0.1
+  (setq flycheck-display-errors-delay 1
         flycheck-idle-change-delay 0.1))
 
 ;; Keybindings
@@ -106,7 +106,7 @@
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 (after! counsel
-  (setq counsel-rg-base-command "rg -M 300 -C 2 --with-filename --no-heading --line-number %s || true"))
+  (setq counsel-rg-base-command "rg -M 200 -C 2 --with-filename --no-heading --line-number %s || true"))
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
                                                        ".cljfmt.edn"))))
