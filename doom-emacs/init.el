@@ -42,7 +42,7 @@
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ;; nav-flash         ; blink the current line after jumping
        neotree           ; a project drawer, like NERDTree for vim
-       ophints           ; highlight the region an operation acts on
+       ;; ophints           ; highlight the region an operation acts on
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
@@ -60,15 +60,15 @@
        ;; (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-       (format +onsave)  ; automated prettiness
+       format  ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
-       multiple-cursors  ; editing in many places at once
+       ;; multiple-cursors  ; editing in many places at once
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
        snippets          ; my elves. They type so I don't have to
-       word-wrap         ; soft wrapping with language-aware indent
+       ;; word-wrap         ; soft wrapping with language-aware indent
 
        :emacs
        dired             ; making dired pretty [functional]
@@ -104,7 +104,7 @@
        magit               ; a git porcelain for Emacs
        ;; make             ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
-       pdf                 ; pdf enhancements
+       ;; pdf                 ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
        ;;terraform         ; infrastructure as code
@@ -114,7 +114,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        ;;assembly          ; assembly for fun or debugging
-       cc                  ; C/C++/Obj-C madness
+       ;; cc                  ; C/C++/Obj-C madness
        (clojure +lsp)             ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -141,16 +141,16 @@
        ;;factor
        ;;ledger            ; an accounting system in Emacs
        ;;lua               ; one-based indices? one-based indices
-       markdown            ; writing docs for people to ignore
+       ;; markdown            ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        ;;(org              ; organize your plain life in plain text
        ;; +dragndrop       ; drag & drop files/images into org buffers
-        ;;+hugo            ; use Emacs for hugo blogging
-        ;;+jupyter         ; ipython/jupyter support for babel
-        ;;+pandoc          ; export-with-pandoc support
-        ;;+pomodoro        ; be fruitful with the tomato technique
+       ;;+hugo            ; use Emacs for hugo blogging
+       ;;+jupyter         ; ipython/jupyter support for babel
+       ;;+pandoc          ; export-with-pandoc support
+       ;;+pomodoro        ; be fruitful with the tomato technique
        ;; +present)        ; using org-mode for presentations
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother

@@ -16,8 +16,9 @@
      ("BUG" error bold)
      ("XXX" font-lock-constant-face bold)
      ("todo" warning bold)))
+ '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(package-selected-packages
-   '(lsp-treemacs flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
+   '(logview lsp-treemacs flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web"))))

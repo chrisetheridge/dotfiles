@@ -73,9 +73,11 @@
    cider-redirect-server-output-to-repl t)
   (require 'flycheck-clj-kondo))
 
+(menu-bar-mode -1)
+
 (after! lsp-mode
   (setq lsp-semantic-tokens-enable nil
-        lsp-idle-delay 0.1
+        lsp-idle-delay 0.3
         lsp-headerline-breadcrumb-enable nil
         lsp-ui-sideline-enable t
         lsp-file-watch-threshold 5000
@@ -88,7 +90,7 @@
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 1
-        flycheck-idle-change-delay 0.1))
+        flycheck-idle-change-delay 0.3))
 
 ;; Keybindings
 (global-set-key (kbd "C-k") 'paredit-kill)
@@ -110,7 +112,6 @@
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
                                                        ".cljfmt.edn"))))
-
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (setq display-line-numbers-type 't)
