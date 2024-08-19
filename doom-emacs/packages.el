@@ -53,7 +53,7 @@
 
 (package! grep+)
 
-(package! cider :pin "b33e18260aa3d6c79451a4c2bbace072c8256869")
+;; (package! cider :pin "b33e18260aa3d6c79451a4c2bbace072c8256869")
 
 (package! map :pin "bb50dba")
 
@@ -65,5 +65,11 @@
 
 (package! flycheck-clj-kondo)
 
+(package! clojure-mode :pin "59888c84b61081e9b0085e388f55132925a66e7a")
+
 (package! copilot
-  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
+  :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el" "dist")))
+
+(package! treesit-auto)
+
+(package! base16-theme)

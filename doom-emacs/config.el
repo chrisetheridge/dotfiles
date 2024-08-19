@@ -7,7 +7,7 @@
 ;; Visual
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
 
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-flatwhite)
 
 ;; Company
 (after! company-mode
@@ -35,6 +35,7 @@
                     "*.tar.gz"
                     "*.tgz"
                     "*.zip")))
+  (setq projectile-indexing-method 'alien)
   ;; ignored directories
   (setq projectile-globally-ignored-directories
         (cl-union projectile-globally-ignored-directories
@@ -43,7 +44,10 @@
                     ".cljs_rhino_repl"
                     ".svn"
                     "out"
-                    "node_modules"
+                    "**/.clj-kondo/.cache"
+                    "*.clj-kondo/.cache/*"
+                    "*.yarn"
+                    "*node_modules/"
                     "resources/public/cljs"
                     ".shadow-cljs/"))))
 
@@ -56,7 +60,8 @@
 
 (after! clojure-mode
   (setq clojure-align-forms-automatically t)
-  (paredit-mode))
+  (paredit-mode)
+  (add-hook 'before-save-hook #'+format/buffer nil t))
 
 ;; CIDER (clojure)
 
@@ -82,11 +87,10 @@
         lsp-ui-sideline-enable t
         lsp-file-watch-threshold 5000
         lsp-enable-indentation t
-        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-show-with-cursor nil
         lsp-ui-doc-enhanced-markdown t
         lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-height 25
-        +format-with-lsp nil))
+        lsp-ui-doc-max-height 25))
 
 (after! flycheck-mode
   (setq flycheck-display-errors-delay 1
@@ -112,13 +116,14 @@
 
 (set-formatter! 'cljfmt '("cljfmt" ("--edn=%s" (concat (projectile-project-root)
                                                        ".cljfmt.edn"))))
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-(setq display-line-numbers-type 't)
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (after! rust-mode-hook
   (setq lsp-rust-server 'rust-analyzer)
   (setq lsp-rust-analyzer-server-display-inlay-hints t))
+
+(setq warning-minimum-level :error)
 
 ;; Copilot
 
@@ -129,3 +134,7 @@
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
+(use-package! treesit-auto
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all))
