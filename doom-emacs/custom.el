@@ -19,7 +19,7 @@
      ("todo" warning bold)))
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(package-selected-packages
-   '(gruvbox-theme ef-themes base16-theme logview lsp-treemacs flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
+   '(magit-todos gruvbox-theme ef-themes base16-theme logview lsp-treemacs flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web"))))
@@ -33,4 +33,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(clojure-keyword-face ((t nil)))
+ '(custom-comment ((t nil)))
+ '(font-lock-comment-face ((t (:foreground "systemTealColor" :slant italic))))
+ '(font-lock-doc-face ((t (:foreground "systemTealColor" :inherit font-lock-comment-face))))
+ '(font-lock-type-face ((t nil)))
  '(ts-fold-replacement-face ((t (:foreground unspecified :box nil :inherit font-lock-comment-face :weight light)))))

@@ -73,3 +73,5 @@
 (package! treesit-auto)
 
 (package! base16-theme)
+
+(package! magit-todos)
