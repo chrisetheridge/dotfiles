@@ -78,9 +78,6 @@
    cider-redirect-server-output-to-repl t)
   (require 'flycheck-clj-kondo))
 
-(after! magit
-  (magit-todos-mode 1))
-
 (menu-bar-mode -1)
 
 (after! lsp-mode

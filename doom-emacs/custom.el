@@ -17,6 +17,11 @@
      ("BUG" error bold)
      ("XXX" font-lock-constant-face bold)
      ("todo" warning bold)))
+ '(magit-todos-branch-list-merge-base-ref "develop")
+ '(magit-todos-exclude-globs
+   '(".git/" "src/radiant" "src/cognician/builder" "src/cognician/externalia" "src/cognician/playwright" "src/cognician/radiant" "src/cognician/semaphore" "src/cognician/tools" "src/cognician/variables" "resources/" "tools/" "src/cognician/builder2" "src/cognician/chat" "src/cognician/feedback_assesssment"))
+ '(magit-todos-group-by
+   '(magit-todos-item-keyword magit-todos-item-first-path-component))
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(package-selected-packages
    '(magit-todos gruvbox-theme ef-themes base16-theme logview lsp-treemacs flycheck-clojure autothemer flycheck-clj-kondo tree-sitter-langs clj-decompiler smex))
